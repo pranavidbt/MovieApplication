@@ -1,0 +1,13 @@
+<div class="main-div">
+    <app-app-search [(searchModel)]="searchModel"></app-app-search>
+      <div class="list">
+        <mat-selection-list  #movie>
+          <mat-list-option  *ngFor="let movie of moviesList | movieFilter: searchModel">
+            <a mat-list-item (click)="onSelect(movie)"><span>{{ movie?.Title }}</span></a>
+          </mat-list-option>
+        </mat-selection-list>
+      </div>
+    </div>
+<div *ngFor="let movie of moviesList">
+{{movie.Title}}
+</div>
